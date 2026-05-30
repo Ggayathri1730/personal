@@ -11,7 +11,7 @@ import "./styles/global.css";
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/personal/">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/journey" element={<Journey />} />
