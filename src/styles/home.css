@@ -1,0 +1,173 @@
+.home {
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #090010, #14001f);
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Stars Background */
+.stars {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(
+    rgba(255, 255, 255, 0.4) 1px,
+    transparent 1px
+  );
+  background-size: 40px 40px;
+  opacity: 0.5;
+}
+
+/* Ensure stars background doesn't intercept pointer events */
+.stars {
+  pointer-events: none;
+  z-index: 0;
+}
+
+.home-cloud {
+  position: absolute;
+  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.95), rgba(255,255,255,0.75) 45%, transparent 70%);
+  border-radius: 50%;
+  opacity: 0.85;
+  filter: blur(4px);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.cloud-a {
+  width: 260px;
+  height: 120px;
+  top: 12%;
+  left: 8%;
+}
+
+.cloud-b {
+  width: 320px;
+  height: 140px;
+  top: 22%;
+  right: 10%;
+  animation: drift 18s ease-in-out infinite;
+  animation-delay: 0.8s;
+}
+
+.cloud-c {
+  width: 220px;
+  height: 100px;
+  bottom: 16%;
+  left: 15%;
+  animation: drift 22s ease-in-out infinite reverse;
+  animation-delay: 1.4s;
+}
+
+.home-teddy-img {
+  width: 130px;
+  height: auto;
+  display: block;
+  border-radius: 30px;
+  box-shadow: 0 20px 45px rgba(255, 183, 216, 0.35);
+}
+
+@keyframes drift {
+  0%, 100% {
+    transform: translateX(0) translateY(0);
+  }
+  50% {
+    transform: translateX(10px) translateY(-8px);
+  }
+}
+
+/* Main container */
+.heart-container {
+  text-align: center;
+  z-index: 2;
+  position: relative;
+}
+
+/* Heart shape */
+.heart {
+  width: 180px;
+  height: 180px;
+  background: #f8b7c7;
+  position: relative;
+  margin: auto;
+  transform: rotate(-45deg);
+  animation: glow 2s infinite alternate;
+}
+
+.heart::before,
+.heart::after {
+  content: "";
+  width: 180px;
+  height: 180px;
+  background: #f8b7c7;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.heart::before {
+  top: -90px;
+  left: 0;
+}
+
+.heart::after {
+  top: 0;
+  left: 90px;
+}
+
+/* 1 Year Text */
+.title {
+  color: #ffe3ea;
+  font-size: 3rem;
+  font-weight: bold;
+  position: absolute;
+  top: 65px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+}
+
+/* Subtitle */
+.subtitle {
+  color: white;
+  font-size: 1.2rem;
+  margin-top: 40px;
+}
+
+/* Button */
+.story-btn {
+  margin-top: 25px;
+  background: #f8b7c7;
+  border: none;
+  padding: 15px 35px;
+  border-radius: 30px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.story-btn:hover {
+  transform: scale(1.08);
+  background: #ffcad8;
+}
+
+/* Teddy */
+.teddy {
+  position: absolute;
+  right: 60px;
+  bottom: 40px;
+  font-size: 75px;
+}
+
+/* Glow animation */
+@keyframes glow {
+  from {
+    box-shadow: 0 0 20px #ffb6c1;
+  }
+  to {
+    box-shadow: 0 0 50px #ff69b4;
+  }
+}

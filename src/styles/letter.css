@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Dancing+Script:wght@700&display=swap');
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body {
+  min-height: 100vh;
+  background: #07010a;
+}
+
+.letter-page{
+  position: relative;
+  min-height:100vh;
+  padding: 80px 24px 120px;
+  color:#ffe9f8;
+  font-family:'Poppins', sans-serif;
+  background: radial-gradient(circle at top left, rgba(255, 95, 180, 0.20), transparent 22%),
+    radial-gradient(circle at 85% 10%, rgba(255, 45, 155, 0.14), transparent 18%),
+    linear-gradient(180deg, #18021c 0%, #07010a 100%);
+  overflow: hidden;
+}
+
+.letter-page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 18%, rgba(255, 186, 235, 0.16), transparent 15%),
+    radial-gradient(circle at 22% 85%, rgba(255, 85, 180, 0.10), transparent 13%);
+  pointer-events: none;
+}
+
+.stars {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle, rgba(255,255,255,0.95) 1px, transparent 1px),
+    radial-gradient(circle, rgba(255,255,255,0.55) 1px, transparent 1px);
+  background-size: 80px 80px, 140px 140px;
+  opacity: 0.24;
+  pointer-events: none;
+}
+
+.letter-title{
+  position: relative;
+  z-index: 1;
+  text-align:center;
+  font-size:84px;
+  color:#ffdbf2;
+  font-family:'Dancing Script', cursive;
+  text-shadow: 0 0 30px rgba(255, 120, 190, 0.45),
+    0 0 16px rgba(255, 210, 240, 0.18);
+  margin-bottom:40px;
+}
+
+.letter-title span{
+  color:#ff8dd2;
+}
+
+.letter-card{
+  position: relative;
+  z-index: 1;
+  max-width: 920px;
+  margin: auto;
+  background: rgba(28, 6, 30, 0.88);
+  border: 1px solid rgba(255, 127, 197, 0.22);
+  border-radius: 42px;
+  padding: 56px 48px;
+  backdrop-filter: blur(16px);
+  box-shadow: 0 0 90px rgba(255, 80, 170, 0.16),
+    inset 0 0 30px rgba(255, 150, 200, 0.06);
+}
+
+.letter-card::before {
+  content: "";
+  position: absolute;
+  inset: -12px;
+  border-radius: 46px;
+  background: linear-gradient(135deg, rgba(255, 103, 190, 0.16), transparent 25%, rgba(255, 157, 219, 0.08));
+  filter: blur(18px);
+}
+
+.letter-card p{
+  font-size:21px;
+  line-height:1.95;
+  color:#ffe8f7;
+  margin-bottom:26px;
+  letter-spacing:0.01em;
+  text-align:left;
+  word-break: break-word;
+}
+
+.letter-card p:last-child {
+  margin-bottom: 0;
+}
+
+.letter-text{
+  max-width:840px;
+  margin:0 auto;
+}
+
+.letter-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 36px;
+  z-index: 1;
+  position: relative;
+}
+
+.letter-continue-button {
+  padding: 16px 42px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(135deg, #ff86d5 0%, #ff5aa9 45%, #ff317d 100%);
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  box-shadow: 0 16px 34px rgba(255, 93, 175, 0.24);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
+}
+
+.letter-continue-button:hover,
+.letter-continue-button:focus {
+  transform: translateY(-3px);
+  box-shadow: 0 24px 42px rgba(255, 93, 175, 0.34);
+  filter: brightness(1.05);
+}
+
+.teddy-container{
+  position: relative;
+  z-index: 1;
+  display:flex;
+  justify-content:center;
+  margin-top:56px;
+}
+
+.letter-teddy{
+  width:230px;
+  animation:float 3.5s ease-in-out infinite;
+  filter: drop-shadow(0 16px 30px rgba(255, 75, 170, 0.18));
+}
+
+@keyframes float{
+  0%{
+    transform:translateY(0);
+  }
+
+  50%{
+    transform:translateY(-10px);
+  }
+
+  100%{
+    transform:translateY(0);
+  }
+}
+
+@media (max-width: 960px) {
+  .letter-page {
+    padding: 60px 18px 100px;
+  }
+
+  .letter-title {
+    font-size: 64px;
+    margin-bottom: 34px;
+  }
+
+  .letter-card {
+    padding: 38px 28px;
+  }
+
+  .letter-card p {
+    font-size: 19px;
+    line-height: 2.05;
+  }
+}
+
+@media (max-width: 640px) {
+  .letter-title {
+    font-size: 48px;
+  }
+
+  .letter-card {
+    border-radius: 32px;
+    padding: 28px 20px;
+  }
+
+  .letter-card p {
+    font-size: 18px;
+    line-height: 2.2;
+    text-align: center;
+  }
+
+  .letter-text {
+    max-width: 100%;
+  }
+
+  .letter-teddy {
+    width: 190px;
+  }
+}

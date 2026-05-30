@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Dancing+Script:wght@700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.journey-page {
+  min-height: 100vh;
+  background: #12001d;
+  background-image:
+    radial-gradient(#ff8ad8 0.8px, transparent 0.8px);
+  background-size: 35px 35px;
+  color: white;
+  padding: 60px 20px;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Stars background should not block pointer events */
+.stars {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(#ff8ad8 0.8px, transparent 0.8px);
+  background-size: 35px 35px;
+  opacity: 0.35;
+  z-index: 0;
+}
+
+.journey-title {
+  text-align: center;
+  font-size: 80px;
+  color: #ffb4dc;
+  font-family: 'Dancing Script', cursive;
+  text-shadow: 0 0 20px #ff69b4;
+}
+
+.journey-subtitle {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 24px;
+  color: #ffd3ec;
+  margin-bottom: 80px;
+}
+
+.timeline {
+  position: relative;
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 140px;
+  top: 0;
+  width: 5px;
+  height: 100%;
+  background: #ff9ed4;
+  box-shadow: 0 0 20px #ff69b4;
+}
+
+.timeline-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin: 60px 0;
+}
+
+/* Date */
+.timeline-date {
+  width: 260px;
+  text-align: right;
+  color: #ffd0ec;
+  font-size: 22px;
+  font-weight: bold;
+  padding-right: 100px;
+}
+
+/* Heart on line */
+.timeline-dot {
+  position: absolute;
+  left: 220px; /* puts heart on line */
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 38px;
+  z-index: 5;
+}
+
+.memory-card {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  background: rgba(255, 182, 219, 0.08);
+  border: 2px solid rgba(255, 182, 219, 0.3);
+  border-radius: 35px;
+  padding: 35px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 30px rgba(255, 105, 180, 0.25);
+}
+
+.photo-frame {
+  width: 270px;
+  height: 300px;
+  background: white;
+  border-radius: 18px;
+  padding: 12px;
+  transform: rotate(-4deg);
+  box-shadow: 0 0 30px rgba(255,255,255,0.3);
+  flex-shrink: 0;
+}
+
+.photo-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.memory-content {
+  margin-left: 50px;
+}
+
+.memory-content h2 {
+  font-size: 50px;
+  color: #ffd3ec;
+  margin-bottom: 20px;
+}
+
+.memory-content p {
+  font-size: 26px;
+  line-height: 1.8;
+  color: #ffe7f4;
+  max-width: 500px;
+}
+
+.teddy-section {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.teddy-img {
+  width: 340px;
+  animation: float 3s ease-in-out infinite;
+}
+
+.memory-btn {
+  display: block;
+  margin: 30px auto;
+  padding: 18px 45px;
+  border-radius: 50px;
+  border: none;
+  background: #ff9ed4;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 0 25px #ff69b4;
+  transition: 0.3s;
+}
+
+.memory-btn:hover {
+  transform: scale(1.08);
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+.more-btn-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+
+.more-link {
+  text-decoration: none;
+}
+
+.more-btn {
+  background: linear-gradient(135deg, #ff9ecf, #ffb6d9);
+  border: none;
+  padding: 18px 45px;
+  border-radius: 50px;
+  color: white;
+  font-size: 1.4rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 0 25px rgba(255, 105, 180, 0.7);
+  transition: 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.more-btn:hover {
+  transform: scale(1.05);
+}
+.more-btn-container a {
+  text-decoration: none;
+}
